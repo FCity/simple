@@ -1,5 +1,5 @@
 <?php
-require '../config/creds.php';
+require '../config/credentials.php';
 
 class DB {
 	// Connect to the 'simple' database
