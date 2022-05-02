@@ -1,0 +1,19 @@
+CREATE DATABASE IF NOT EXISTS simple;
+
+USE simple
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  username VARCHAR(30) NOT NULL UNIQUE,
+  password VARCHAR(62) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE IF NOT EXISTS posts (
+  post_id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  post_title VARCHAR(60) NOT NULL,
+  post_content TEXT NOT NULL,
+  post_author VARCHAR(30) NOT NULL,
+  PRIMARY KEY (post_id),
+  FOREIGN KEY (post_author) REFERENCES users (id)
+);
